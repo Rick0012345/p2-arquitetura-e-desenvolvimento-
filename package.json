@@ -1,0 +1,16 @@
+{
+  "name": "p2-arquitetura-e-desenvolvimento",
+  "version": "1.0.0",
+  "description": "Solução de referência para prova: Clean Code, SOLID, Design Patterns, TDD, BDD, Arquitetura Limpa, Microsserviços, Docker e Deploy.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "start:catalog": "node services/catalog-service/src/presentation/server.js",
+    "start:orders": "node services/order-service/src/presentation/server.js",
+    "start:notifications": "node services/notification-service/src/presentation/server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

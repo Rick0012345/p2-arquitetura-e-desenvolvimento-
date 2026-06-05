@@ -1,0 +1,27 @@
+services:
+  catalog-service:
+    build:
+      context: .
+      dockerfile: services/catalog-service/Dockerfile
+    ports:
+      - "3001:3001"
+    environment:
+      - PORT=3001
+
+  order-service:
+    build:
+      context: .
+      dockerfile: services/order-service/Dockerfile
+    ports:
+      - "3002:3002"
+    environment:
+      - PORT=3002
+
+  notification-service:
+    build:
+      context: .
+      dockerfile: services/notification-service/Dockerfile
+    ports:
+      - "3003:3003"
+    environment:
+      - PORT=3003

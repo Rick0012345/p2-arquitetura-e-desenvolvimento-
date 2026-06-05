@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: feiraconecta-catalog-service
+    runtime: docker
+    dockerfilePath: services/catalog-service/Dockerfile
+    healthCheckPath: /health
+    envVars:
+      - key: PORT
+        value: 3001
+
+  - type: web
+    name: feiraconecta-order-service
+    runtime: docker
+    dockerfilePath: services/order-service/Dockerfile
+    healthCheckPath: /health
+    envVars:
+      - key: PORT
+        value: 3002
+
+  - type: web
+    name: feiraconecta-notification-service
+    runtime: docker
+    dockerfilePath: services/notification-service/Dockerfile
+    healthCheckPath: /health
+    envVars:
+      - key: PORT
+        value: 3003
