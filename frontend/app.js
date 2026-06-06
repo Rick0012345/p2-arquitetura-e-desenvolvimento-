@@ -1,7 +1,10 @@
+const apiHost = window.location.hostname || 'localhost';
+const apiProtocol = window.location.protocol || 'http:';
+
 const endpoints = {
-  catalog: 'http://localhost:3001',
-  orders: 'http://localhost:3002',
-  notifications: 'http://localhost:3003'
+  catalog: `${apiProtocol}//${apiHost}:3001`,
+  orders: `${apiProtocol}//${apiHost}:3002`,
+  notifications: `${apiProtocol}//${apiHost}:3003`
 };
 
 const state = {
