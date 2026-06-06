@@ -20,12 +20,33 @@ Preencha após o deploy:
 
 Cada serviço possui camadas de domínio, aplicação, infraestrutura e apresentação, seguindo Arquitetura Limpa.
 
+### Endpoints por servico
+
+| Servico | Health check | Endpoints de negocio |
+| --- | --- | --- |
+| `catalog-service` | `GET /health` | `GET /products` |
+| `order-service` | `GET /health` | `GET /orders`, `POST /orders` |
+| `notification-service` | `GET /health` | `GET /notifications`, `POST /notifications` |
+
+### Execucao individual
+
+```bash
+npm run start:catalog
+npm run start:orders
+npm run start:notifications
+```
+
+Tambem e possivel subir todos juntos com `docker compose up --build`.
+
 ## Como executar localmente
 
 ```bash
 npm test
 docker compose up --build
+npm run start:frontend
 ```
+
+Com os tres microsservicos rodando, abra `http://localhost:3000` para usar o frontend.
 
 Endpoints principais:
 

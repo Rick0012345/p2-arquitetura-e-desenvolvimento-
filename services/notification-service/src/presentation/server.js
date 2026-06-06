@@ -11,6 +11,10 @@ const listNotifications = new ListNotificationsUseCase(repository);
 
 const server = http.createServer(async (request, response) => {
   try {
+    if (request.method === 'OPTIONS') {
+      return sendJson(response, 204, {});
+    }
+
     if (request.url === '/health') {
       return sendJson(response, 200, { status: 'ok', service: 'notification-service' });
     }

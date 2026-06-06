@@ -25,6 +25,10 @@ const listOrders = new ListOrdersUseCase(orderRepository);
 
 const server = http.createServer(async (request, response) => {
   try {
+    if (request.method === 'OPTIONS') {
+      return sendJson(response, 204, {});
+    }
+
     if (request.url === '/health') {
       return sendJson(response, 200, { status: 'ok', service: 'order-service' });
     }

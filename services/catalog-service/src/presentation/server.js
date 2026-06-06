@@ -10,6 +10,10 @@ const listAvailableProducts = new ListAvailableProducts(repository);
 const catalog = new CatalogFacade(listAvailableProducts);
 
 const server = http.createServer(async (request, response) => {
+  if (request.method === 'OPTIONS') {
+    return sendJson(response, 204, {});
+  }
+
   if (request.url === '/health') {
     return sendJson(response, 200, { status: 'ok', service: 'catalog-service' });
   }

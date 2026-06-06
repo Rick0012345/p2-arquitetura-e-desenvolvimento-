@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "node --test",
+    "start:frontend": "node frontend/server.js",
     "start:catalog": "node services/catalog-service/src/presentation/server.js",
     "start:orders": "node services/order-service/src/presentation/server.js",
     "start:notifications": "node services/notification-service/src/presentation/server.js"

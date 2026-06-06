@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FeiraConecta</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <div>
+          <span class="eyebrow">Microsservicos em acao</span>
+          <h1>FeiraConecta</h1>
+          <p>Monte uma cesta, envie o pedido e acompanhe o registro das notificacoes em uma interface unica.</p>
+        </div>
+        <div class="status-grid" aria-label="Status dos servicos">
+          <article class="status-card" id="catalogStatus">Catalogo</article>
+          <article class="status-card" id="orderStatus">Pedidos</article>
+          <article class="status-card" id="notificationStatus">Notificacoes</article>
+        </div>
+      </section>
+
+      <section class="workspace">
+        <aside class="panel">
+          <div class="panel-header">
+            <span>Catalogo</span>
+            <button class="icon-button" id="refreshProducts" title="Atualizar catalogo">↻</button>
+          </div>
+          <div class="product-list" id="productList"></div>
+        </aside>
+
+        <section class="panel order-panel">
+          <div class="panel-header">
+            <span>Novo pedido</span>
+            <strong id="cartTotal">R$ 0,00</strong>
+          </div>
+          <form id="orderForm" class="order-form">
+            <label>
+              Cliente
+              <input id="customerName" type="text" placeholder="Nome do cliente" required />
+            </label>
+            <label>
+              Pagamento
+              <select id="paymentMethod">
+                <option value="pix">Pix</option>
+                <option value="credit_card">Cartao de credito</option>
+              </select>
+            </label>
+            <div class="cart-list" id="cartList"></div>
+            <button class="primary-button" type="submit">Enviar pedido</button>
+          </form>
+          <p class="feedback" id="feedback" role="status"></p>
+        </section>
+
+        <aside class="panel">
+          <div class="panel-header">
+            <span>Pedidos recentes</span>
+            <button class="icon-button" id="refreshOrders" title="Atualizar pedidos">↻</button>
+          </div>
+          <div class="timeline" id="ordersList"></div>
+        </aside>
+      </section>
+
+      <section class="panel notifications-panel">
+        <div class="panel-header">
+          <span>Notificacoes registradas</span>
+          <button class="icon-button" id="refreshNotifications" title="Atualizar notificacoes">↻</button>
+        </div>
+        <div class="notification-list" id="notificationList"></div>
+      </section>
+    </main>
+
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>
